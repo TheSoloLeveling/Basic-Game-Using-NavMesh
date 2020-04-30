@@ -1113,11 +1113,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 800
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -3385,15 +3385,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.329
+      value: 25.462
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.06
+      value: 47.229
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3426,6 +3426,18 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7793
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7793
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7793
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 58c222679ab255b4b80068e17f259f0d, type: 3}
       propertyPath: m_Controller

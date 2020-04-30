@@ -30,7 +30,7 @@ public class NPCController : MonoBehaviour
         index = Random.Range(0, waypoints.Length);
 
         InvokeRepeating("Tick", 0, 0.5f); // Reapeat the tick method every half second
-                                          // Check the player its static 
+                                          // Check the player if it's static 
 
         if (waypoints.Length > 0)
         {
@@ -50,6 +50,13 @@ public class NPCController : MonoBehaviour
 
     void Tick()
     {
-        agent.destination = waypoints[index].position; 
+        agent.destination = waypoints[index].position; // set the destination of the agent to the current waypoint position
+        agent.speed = agentSpeed / 2;
+
+        if (player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
+        {
+            agent.destination = player.position;
+            agent.speed = agentSpeed;
+        }
     }
 }
