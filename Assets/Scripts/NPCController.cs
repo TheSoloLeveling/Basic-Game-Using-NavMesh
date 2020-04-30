@@ -34,7 +34,7 @@ public class NPCController : MonoBehaviour
 
         if (waypoints.Length > 0)
         {
-            InvokeRepeating("Patrol", 0, patrolTime);  //invoke the patrol method for every patrolTime
+            InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);  //invoke the patrol method for every patrolTime, 0 is the delay for the start of the cycle
         }
     }
 
@@ -59,4 +59,11 @@ public class NPCController : MonoBehaviour
             agent.speed = agentSpeed;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
+
 }

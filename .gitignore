@@ -15,7 +15,9 @@ ADG_Textures/
 Cursors/
 Ground textures pack/
 Rocks and Boulders 2/
-Toby Fredson
+Toby Fredson/
+Hovl Studio/
+skull_Shield/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
