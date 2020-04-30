@@ -37,7 +37,17 @@ public class MouseManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                OnClickEnvironment.Invoke(hit.point);  // the hitpoint from the raycast 
+                if ( door == true)
+                {
+                    Transform doorway = hit.collider.gameObject.transform;  // access to the transform of the doorway if its hit
+                    OnClickEnvironment.Invoke(doorway.position + doorway.forward * 5); // invoke a forward vector through the doorway position
+                }
+
+                else
+                {
+                    OnClickEnvironment.Invoke(hit.point);  // invoke  the hitpoint from the raycast 
+                }
+               
             }
         }
 
@@ -48,6 +58,7 @@ public class MouseManager : MonoBehaviour
 
     }
 }
+
 
 [System.Serializable]
 public class EventVector3 : UnityEvent<Vector3> { }  // creating a custom class to send Vector3 informations through an event
