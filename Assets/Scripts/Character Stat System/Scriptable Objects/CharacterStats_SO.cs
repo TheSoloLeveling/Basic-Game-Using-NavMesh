@@ -249,6 +249,19 @@ public class CharacterStats_SO : ScriptableObject
         //Display the Death animation
     }
 
+    private void LevelUp()
+    {
+        charLevel += 1;
+        //display level up vizualization
+
+        maxHealth = charLevelUps[charLevel - 1].maxHealth;
+        maxMana = charLevelUps[charLevel - 1].maxMana;
+        maxWealth = charLevelUps[charLevel - 1].maxWealth;
+        baseDamage = charLevelUps[charLevel - 1].baseDamage;
+        baseResistance = charLevelUps[charLevel - 1].baseResistance;
+        maxEmcumbrance = charLevelUps[charLevel - 1].maxEncumberance;
+    }
+
     
 
     #endregion

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 466837f03099d7b4e91fafc19083e7a9, type: 3}
-  m_Name: NewStats
+  m_Name: MainCharaterStats
   m_EditorClassIdentifier: 
   setManually: 0
   saveDataOnClose: 0
@@ -24,19 +24,8 @@ MonoBehaviour:
   currentDamage: 0
   baseResistance: 0
   currentResistance: 0
-  currentEmcumbrance: 0
-  chaExperience: 0
+  currentEncumbrance: 0
+  maxEmcumbrance: 0
+  charExperience: 0
   charLevel: 0
-  charLevelUps:
-  - maxHealth: 0
-    maxMana: 0
-    maxWealth: 0
-    baseDamage: 0
-    baseResistance: 0
-    maxEncumberance: 0
-  - maxHealth: 0
-    maxMana: 0
-    maxWealth: 0
-    baseDamage: 0
-    baseResistance: 0
-    maxEncumberance: 0
+  charLevelUps: []
