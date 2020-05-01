@@ -45,9 +45,10 @@ public class CharacterStats_SO : ScriptableObject
     public float baseResistance = 0f;
     public float currentResistance = 0f;
 
-    public float currentEmcumbrance = 0f; // claim property (inventory)
+    public float currentEncumbrance = 0f; // claim property (inventory)
+    public float maxEmcumbrance = 0f;
 
-    public int chaExperience = 0;
+    public int charExperience = 0;
     public int charLevel = 0;
 
     public CharLevelUps[] charLevelUps;
