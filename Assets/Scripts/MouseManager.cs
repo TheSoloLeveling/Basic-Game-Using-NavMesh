@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class MouseManager : MonoBehaviour
 {
+   // public Animator doorAnim;
+
     public LayerMask clickableLayer; //
 
     public Texture2D pointer; // normal mouse
@@ -41,6 +43,9 @@ public class MouseManager : MonoBehaviour
                 {
                     Transform doorway = hit.collider.gameObject.transform;  // access to the transform of the doorway if its hit
                     OnClickEnvironment.Invoke(doorway.position + doorway.forward * 5); // invoke a forward vector through the doorway position
+                   // doorAnim.SetBool("isDoorClickedOn", true);
+
+                    //StartCoroutine("CloseDoor");
                 }
 
                 else
@@ -57,6 +62,13 @@ public class MouseManager : MonoBehaviour
         }
 
     }
+
+   /* private IEnumerator CloseDoor()
+    {
+        yield return new WaitForSeconds(3);
+        doorAnim.SetBool("isDoorClickedOn", false);
+
+    }*/
 }
 
 
