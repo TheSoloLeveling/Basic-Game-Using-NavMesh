@@ -19,6 +19,9 @@ Toby Fredson/
 Water Shader/
 Hovl Studio/
 skull_Shield/
+_TerrainAutoUpgrade/
+Handpainted Forest Environment/
+
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta

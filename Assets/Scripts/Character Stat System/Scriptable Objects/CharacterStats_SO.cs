@@ -24,9 +24,8 @@ public class CharacterStats_SO : ScriptableObject
     public ItemPickUp weapon { get; private set; } // define the accessiblity of the variable
     public ItemPickUp headArmor { get; private set; }
     public ItemPickUp chestArmor { get; private set; }
-    public ItemPickUp handArmor { get; private set; }
-    public ItemPickUp legtArmor { get; private set; }
-    public ItemPickUp footArmor { get; private set; }
+    public ItemPickUp handsArmor { get; private set; }
+    public ItemPickUp legsArmor { get; private set; }
     public ItemPickUp misc1 { get; private set; }  // misc for another type of items
     public ItemPickUp misc2 { get; private set; }  
 
@@ -96,6 +95,29 @@ public class CharacterStats_SO : ScriptableObject
     {
         weapon = weaponPickUp;
         currentDamage = baseDamage + weapon.itemDefinition.itemAmount;
+    }
+
+    public void EquipArmor(ItemPickUp armorPickUp, CharacterInventory charInventory)
+    {
+        switch(armorPickUp.itemDefinition.itemArmorSubType) // switch the index of the enum in the item defintion of the itemPickUp enter as parameter
+        {
+            case ItemArmorSubType.Head:        // if its a head armor 
+                headArmor = armorPickUp;        // the current head armor will be the armorPickUp
+                currentResistance += armorPickUp.itemDefinition.itemAmount; // increase the resistance based on the item amount of the itemPickUp enter as parameter 
+                break;
+            case ItemArmorSubType.Chest:    // the same thing for all the type of armor in the enum
+                chestArmor = armorPickUp;
+                currentResistance += armorPickUp.itemDefinition.itemAmount;
+                break;
+            case ItemArmorSubType.Hands:    // the same thing for all the type of armor in the enum
+                handsArmor = armorPickUp;
+                currentResistance += armorPickUp.itemDefinition.itemAmount;
+                break;
+            case ItemArmorSubType.Legs:    // the same thing for all the type of armor in the enum
+                legsArmor = armorPickUp;
+                currentResistance += armorPickUp.itemDefinition.itemAmount;
+                break;
+        }
     }
 
     #endregion

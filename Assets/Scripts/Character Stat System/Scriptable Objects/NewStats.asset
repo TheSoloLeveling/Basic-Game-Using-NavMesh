@@ -27,4 +27,16 @@ MonoBehaviour:
   currentEmcumbrance: 0
   chaExperience: 0
   charLevel: 0
-  charLevelUps: []
+  charLevelUps:
+  - maxHealth: 0
+    maxMana: 0
+    maxWealth: 0
+    baseDamage: 0
+    baseResistance: 0
+    maxEncumberance: 0
+  - maxHealth: 0
+    maxMana: 0
+    maxWealth: 0
+    baseDamage: 0
+    baseResistance: 0
+    maxEncumberance: 0
