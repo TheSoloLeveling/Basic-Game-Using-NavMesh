@@ -16,6 +16,9 @@ public class NPCController : MonoBehaviour
     Animator animator; // Animator of NPC
     NavMeshAgent agent; // NavMeshAgent of NPc
 
+    [Header("Use for Debugging Aggro Radius")]  // put a bolded message that describe the variables
+    public bool showAggro = true;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +37,7 @@ public class NPCController : MonoBehaviour
 
         if (waypoints.Length > 0)
         {
-            InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);  //invoke the patrol method for every patrolTime, 0 is the delay for the start of the cycle
+            InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);  //invoke the patrol method for every patrolTime,the random range is the delay for the start of the cycle
         }
     }
 
@@ -62,8 +65,17 @@ public class NPCController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, aggroRange);
+        if (showAggro)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, aggroRange);
+        }
+
+        else
+        {
+            return;
+        }
+       
     }
 
 }

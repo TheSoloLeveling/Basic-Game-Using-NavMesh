@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466837f03099d7b4e91fafc19083e7a9, type: 3}
+  m_Name: NewStats
+  m_EditorClassIdentifier: 
+  setManually: 0
+  saveDataOnClose: 0
+  maxHealth: 0
+  currentHealth: 0
+  maxWealth: 0
+  currentWealth: 0
+  maxMana: 0
+  currentMana: 0
+  baseDamage: 0
+  currentDamage: 0
+  baseResistance: 0
+  currentResistance: 0
+  currentEmcumbrance: 0
+  chaExperience: 0
+  charLevel: 0
+  charLevelUps: []
