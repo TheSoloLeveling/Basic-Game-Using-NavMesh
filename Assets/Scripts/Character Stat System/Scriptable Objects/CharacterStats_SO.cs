@@ -262,7 +262,18 @@ public class CharacterStats_SO : ScriptableObject
         maxEmcumbrance = charLevelUps[charLevel - 1].maxEncumberance;
     }
 
-    
+
+
+    #endregion
+
+    #region SaveCharacterData
+    public void saveCharacterData()
+    {
+        // saveDataOnClose = true;
+       // EditorUtility.SetDirty(this);  // a flag that tells unity that the data of this object need to be resaved because its dirty
+    }
+
 
     #endregion
 }
+

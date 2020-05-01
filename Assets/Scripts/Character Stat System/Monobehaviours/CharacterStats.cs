@@ -9,7 +9,7 @@ public class CharacterStats : MonoBehaviour
     public CharacterInventory charInv;
     public GameObject characterWeaponSlot;
 
-    #region
+    #region Instance of the CharacterInventory
 
     public CharacterStats()
     {
@@ -18,7 +18,7 @@ public class CharacterStats : MonoBehaviour
 
     #endregion
 
-    #region
+    #region StatsSetManually
 
     private void Start()
     {
@@ -42,6 +42,16 @@ public class CharacterStats : MonoBehaviour
             characterDefinition.charExperience = 0;
             characterDefinition.charLevel = 1;
         }
+    }
+    #endregion
+
+    #region Updates
+    private void Update()
+    {
+        /*  if (Input.GetMouseButtonDown(2))
+          {
+              characterDefinition.saveCharacterData();
+          }*/
     }
     #endregion
 
