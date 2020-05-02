@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     // What level the game is currently in
     // Load and unload game levels
@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
+
         DontDestroyOnLoad(gameObject);   // to make sure the game object of the game manager will never get Destroyed while loading scenes
 
         _LoadOperations = new List<AsyncOperation>();
