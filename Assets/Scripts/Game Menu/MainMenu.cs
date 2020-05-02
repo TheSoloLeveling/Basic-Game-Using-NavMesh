@@ -13,6 +13,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AnimationClip _fadeOutAnimation;
     [SerializeField] private AnimationClip _fadeInAnimation;
 
+    private void Start()
+    {
+        GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+    }
+
     public void OnFadeOutComplete()
     {
         Debug.LogWarning("FadeOut Complete");
@@ -39,4 +44,11 @@ public class MainMenu : MonoBehaviour
         _mainMenuAnimator.Play();
     }
     
+    void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
+    {
+        if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
+        {
+            FadeOut();
+        }
+    }
 }
