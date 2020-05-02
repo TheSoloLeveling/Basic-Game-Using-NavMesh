@@ -10,12 +10,27 @@ public class GameManager : Singleton<GameManager>
     // Keep track of the game state
     // generate other persistent system
 
+
+    public enum GameState  // what kind of gameState exist
+    {
+        PREGAME,
+        RUNNING,
+        PAUSED,
+    }
+
     public GameObject[] SystemPrefabs; // Objects that the GameManager need to track
 
-    private string _currentLevelName = string.Empty;
 
     List<GameObject> _instancedSystemPrefabs;
     List<AsyncOperation> _LoadOperations;  // to track the number of AsyncOperations we have
+    GameState _currentGameState = GameState.PREGAME;
+
+    private string _currentLevelName = string.Empty;
+    public GameState CurrentGameState   // define the accessor of the CurrentGameState
+    {
+        get { return _currentGameState; }
+        private set { _currentGameState = value; } // value: keyword that all setters have that passes in whatever is been set into this bracket 
+    }
 
     private void Start()
     {      
@@ -44,6 +59,27 @@ public class GameManager : Singleton<GameManager>
     void OnUnloadOperationComplete(AsyncOperation ao)
     {
         Debug.Log("Unload Complete");
+    }
+
+    void UpdateState(GameState state) // update the state of the game
+    {
+        _currentGameState = state;
+
+        switch( _currentGameState)
+        {
+            case GameState.PREGAME:
+                break;
+
+            case GameState.RUNNING:
+                break;
+
+            case GameState.PAUSED:
+                break;
+
+            default:
+                break;
+            
+        }
     }
 
     void InstantiateSystemPrefabs()
