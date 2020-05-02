@@ -10,17 +10,21 @@ public class GameManager : Singleton<GameManager>
     // Keep track of the game state
     // generate other persistent system
 
+    public GameObject[] SystemPrefabs; // Objects that the GameManager need to track
+
     private string _currentLevelName = string.Empty;
 
+    List<GameObject> _instancedSystemPrefabs;
     List<AsyncOperation> _LoadOperations;  // to track the number of AsyncOperations we have
 
     private void Start()
-    {
-        
-
+    {      
         DontDestroyOnLoad(gameObject);   // to make sure the game object of the game manager will never get Destroyed while loading scenes
 
         _LoadOperations = new List<AsyncOperation>();
+        _instancedSystemPrefabs = new List<GameObject>();
+
+        InstantiateSystemPrefabs();
 
         LoadLevel("Main");
     }
@@ -40,6 +44,16 @@ public class GameManager : Singleton<GameManager>
     void OnUnloadOperationComplete(AsyncOperation ao)
     {
         Debug.Log("Unload Complete");
+    }
+
+    void InstantiateSystemPrefabs()
+    {
+        GameObject prefabInstance;
+        for (int i =0; i < SystemPrefabs.Length; i++)
+        {
+            prefabInstance = Instantiate(SystemPrefabs[i]);
+            _instancedSystemPrefabs.Add(prefabInstance); 
+        }
     }
 
     public void LoadLevel(string levelName)
@@ -70,5 +84,16 @@ public class GameManager : Singleton<GameManager>
         }
 
         ao.completed += OnUnloadOperationComplete;
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        for (int i= 0; i < _instancedSystemPrefabs.Count; i++)
+        {
+            Destroy(_instancedSystemPrefabs[i]);
+        }
+        _instancedSystemPrefabs.Clear();
     }
 }
