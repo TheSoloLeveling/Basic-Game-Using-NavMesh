@@ -11,11 +11,23 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        ResumeButton.onClick.AddListener(HandleResumeClick);
+        ResumeButton.onClick.AddListener(HandleResumeClick);  // if the button is clicked, the HandleresumeClick is listenning to it
+        RestartButton.onClick.AddListener(HandleRestartClick);
+        QuitButton.onClick.AddListener(HandleQuitClick);
     }
 
     void HandleResumeClick()
     {
         GameManager.Instance.TogglePause();
+    }
+
+    void HandleRestartClick()
+    {
+        GameManager.Instance.RestartGame();
+    }
+
+    void HandleQuitClick()
+    {
+        GameManager.Instance.QuitGame();
     }
 }
