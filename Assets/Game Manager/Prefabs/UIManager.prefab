@@ -580,6 +580,9 @@ MonoBehaviour:
   _mainMenu: {fileID: 2536927032755869425}
   _pauseMenu: {fileID: 2807800919718124056}
   _dummyCamera: {fileID: 20757272912230474}
+  OnMainMenuFadeComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1495308988550548
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +659,9 @@ MonoBehaviour:
   _mainMenuAnimator: {fileID: 111958717725990638}
   _fadeOutAnimation: {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
   _fadeInAnimation: {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
+  OnMainMenuFadeComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1617907883662474
 GameObject:
   m_ObjectHideFlags: 0

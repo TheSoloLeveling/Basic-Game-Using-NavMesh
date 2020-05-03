@@ -19,4 +19,5 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("Speed", agent.velocity.magnitude);
     }
+    
 }

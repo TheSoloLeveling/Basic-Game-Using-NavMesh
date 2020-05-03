@@ -22,18 +22,32 @@ public class MainMenu : MonoBehaviour
 
     public void OnFadeOutComplete()
     {
-        
+        OnMainMenuFadeComplete.Invoke(true);
     }
 
-    public void OnFadeInComplet()
+    public void OnFadeInComplete()
     {
-        
+        OnMainMenuFadeComplete.Invoke(false);
 
         UIManager.Instance.SetDummyCameraActive(true);
     }
 
+    void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
+    {
+        if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
+        {
+            FadeOut();
+        }
+
+        if (previousState != GameManager.GameState.PREGAME && currentState == GameManager.GameState.PREGAME)
+        {
+            FadeIn();
+        }
+    }
+
     public void FadeIn()
     {
+        
         _mainMenuAnimator.Stop();
         _mainMenuAnimator.clip = _fadeInAnimation;
         _mainMenuAnimator.Play();
@@ -48,16 +62,5 @@ public class MainMenu : MonoBehaviour
         _mainMenuAnimator.Play();
     }
     
-    void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
-    {
-        if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
-        {
-            FadeOut();
-        }
-
-        if (previousState != GameManager.GameState.PREGAME && currentState == GameManager.GameState.PREGAME)
-        {
-            FadeIn();
-        }
-    }
+   
 }
