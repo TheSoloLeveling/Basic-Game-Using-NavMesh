@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviour
     public void OnFadeInComplet()
     {
         Debug.LogWarning("FadeIn Complete");
+
+        UIManager.Instance.SetDummyCameraActive(true);
     }
 
     public void FadeIn()

@@ -15,13 +15,26 @@ public class MouseManager : MonoBehaviour
 
     public EventVector3 OnClickEnvironment; // event to which we can connect the NavMeshAgent
 
-    void Start()
+    private bool _useDefaultCursor = false;
+
+    private void Start()
     {
-        
+        GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+    }
+
+    void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
+    {
+        _useDefaultCursor = currentState == GameManager.GameState.PAUSED;
     }
 
     void Update()
     {
+        if (_useDefaultCursor)
+        {
+            Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
+            return;
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
         {

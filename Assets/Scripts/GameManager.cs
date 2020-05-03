@@ -8,11 +8,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+    #region Objectives
     // What level the game is currently in
     // Load and unload game levels
     // Keep track of the game state
     // generate other persistent system
 
+    // Toggle Pause
+    // Trigger method via 'escape' key
+    // Trigger method via pause menu
+    // Pause simulation when in pause state
+    // modify cursor to use pointer when in pause state
+
+    #endregion
 
     public enum GameState  // what kind of gameState exist
     {
@@ -43,6 +51,18 @@ public class GameManager : Singleton<GameManager>
         _instancedSystemPrefabs = new List<GameObject>();
 
         InstantiateSystemPrefabs();
+    }
+
+    private void Update()
+    {
+        if (_currentGameState == GameState.PREGAME)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
     }
 
     void OnLoadOperationComplete(AsyncOperation ao)  // the event completed of the AsyncOperation need the AsyncOperation argument
@@ -76,12 +96,15 @@ public class GameManager : Singleton<GameManager>
         switch( _currentGameState)
         {
             case GameState.PREGAME:
+                Time.timeScale = 1f; // back to normal time of the game
                 break;
 
             case GameState.RUNNING:
+                Time.timeScale = 1f; // back to normal time of the game
                 break;
 
             case GameState.PAUSED:
+                Time.timeScale = 0f; // pausing any simulation on game;
                 break;
 
             default:
@@ -145,5 +168,10 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         LoadLevel("Main");
+    }
+
+    public void TogglePause()
+    {
+        UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);  // condition ? true : false
     }
 }
