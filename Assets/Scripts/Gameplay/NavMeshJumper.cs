@@ -30,7 +30,7 @@ public class NavMeshJumper : MonoBehaviour
         {
             float yOffset = height * (time - time * time);
             agent.transform.position = Vector3.Lerp(startPos, endPos, time) + yOffset * Vector3.up;
-            time = Time.deltaTime / duration;
+            time += Time.deltaTime / duration;
             yield return null;
         }
     }
