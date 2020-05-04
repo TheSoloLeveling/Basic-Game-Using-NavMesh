@@ -17,4 +17,9 @@ public class CharacterInventory : MonoBehaviour
     }
     #endregion
 
+    public void StoreItem(ItemPickUp itemToStore)
+    {
+
+    }
+
 }

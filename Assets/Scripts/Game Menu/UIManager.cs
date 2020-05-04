@@ -12,7 +12,7 @@ public class UIManager : Singleton<UIManager>
     public Events.EventFadeComplete OnMainMenuFadeComplete;
     private void Start()
     {
-        _mainMenu.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
+        _mainMenu.OnFadeComplete.AddListener(HandleMainMenuFadeComplete);
         GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
     }
 

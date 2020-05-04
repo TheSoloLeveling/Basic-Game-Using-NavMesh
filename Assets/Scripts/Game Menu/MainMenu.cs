@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AnimationClip _fadeOutAnimation;
     [SerializeField] private AnimationClip _fadeInAnimation;
 
-    public Events.EventFadeComplete OnMainMenuFadeComplete;
+    public Events.EventFadeComplete OnFadeComplete;
 
     private void Start()
     {
@@ -22,12 +22,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnFadeOutComplete()
     {
-        OnMainMenuFadeComplete.Invoke(true);
+        OnFadeComplete.Invoke(true);
     }
 
     public void OnFadeInComplete()
     {
-        OnMainMenuFadeComplete.Invoke(false);
+        OnFadeComplete.Invoke(false);
 
         UIManager.Instance.SetDummyCameraActive(true);
     }
