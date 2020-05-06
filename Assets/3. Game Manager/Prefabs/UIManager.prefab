@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224572580354962894}
-  - component: {fileID: 2807800919718124056}
+  - component: {fileID: 4037277922228120114}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2807800919718124056
+--- !u!114 &4037277922228120114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1022039478163996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442195f6425298a4685efe5be1604172, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f4d4badafad4254e9e16bc3d1d2a9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ResumeButton: {fileID: 114615682490614664}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 114304309134960850}
   - component: {fileID: 114006494436563054}
   - component: {fileID: 114498863683258930}
-  - component: {fileID: 6732481103303213368}
+  - component: {fileID: 2616722676109810743}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &6732481103303213368
+--- !u!114 &2616722676109810743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -574,11 +574,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1368435504543104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957031e386f3cc8489435f313258d8f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 269f8ea8f563aaf40b48a09261f0dbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMenu: {fileID: 2536927032755869425}
-  _pauseMenu: {fileID: 2807800919718124056}
+  _mainMenu: {fileID: 4401005584583534965}
+  _pauseMenu: {fileID: 4037277922228120114}
   _dummyCamera: {fileID: 20757272912230474}
   OnMainMenuFadeComplete:
     m_PersistentCalls:
@@ -593,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224085275167005504}
   - component: {fileID: 111958717725990638}
-  - component: {fileID: 2536927032755869425}
+  - component: {fileID: 4401005584583534965}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -634,17 +634,14 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
   m_Animations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 7400000, guid: 3739763eb096ee440a6e86f6480a786c, type: 2}
   - {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
+  - {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &2536927032755869425
+--- !u!114 &4401005584583534965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,12 +650,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495308988550548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97ba3d3620a69b84cac19aed1bcd2b10, type: 3}
+  m_Script: {fileID: 11500000, guid: 40b95ff9056565f45a788eb4b69dc842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuAnimator: {fileID: 111958717725990638}
   _fadeOutAnimation: {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
-  _fadeInAnimation: {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
+  _fadeIntAnimation: {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
   OnMainMenuFadeComplete:
     m_PersistentCalls:
       m_Calls: []

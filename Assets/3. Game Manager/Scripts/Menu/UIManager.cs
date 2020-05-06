@@ -6,19 +6,19 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private PauseMenu _pauseMenu;
-
     [SerializeField] private Camera _dummyCamera;
 
     public Events.EventFadeComplete OnMainMenuFadeComplete;
+
     private void Start()
     {
-        _mainMenu.OnFadeComplete.AddListener(HandleMainMenuFadeComplete);
+        _mainMenu.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
         GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
     }
 
-    void HandleMainMenuFadeComplete (bool fadeOut)
+    void HandleMainMenuFadeComplete(bool fadeOut)
     {
-        OnMainMenuFadeComplete.Invoke(fadeOut); 
+        OnMainMenuFadeComplete.Invoke(fadeOut);
     }
 
     void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
@@ -34,9 +34,7 @@ public class UIManager : Singleton<UIManager>
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameManager.Instance.StartGame();
-            
-            _mainMenu.FadeOut();
+            GameManager.Instance.StartGame();           
         }
     }
 

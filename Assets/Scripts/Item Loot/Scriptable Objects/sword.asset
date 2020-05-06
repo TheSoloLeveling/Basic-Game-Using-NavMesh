@@ -26,8 +26,8 @@ MonoBehaviour:
   isEquiped: 0
   isInteractable: 0
   isStorable: 1
-  isUnique: 0
-  isIndestructable: 0
+  isUnique: 1
+  isIndestructable: 1
   isQuestItem: 0
   isStackable: 0
   destroyOnUse: 0
