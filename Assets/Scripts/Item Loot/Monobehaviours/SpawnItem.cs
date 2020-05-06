@@ -29,7 +29,7 @@ public class SpawnItem : MonoBehaviour, ISpawns   // link up the interface and w
             whichToSpawn += ip.spawnChanceWeight;
             if (whichToSpawn >= chosen)
             {
-                itemSpawned = Instantiate(ip.itemSpawnObject, transform.position, Quaternion.identity);
+                itemSpawned = Instantiate(ip.itemSpawnObject, transform.position, Quaternion.Euler(-90,0,0));
 
                 itemMaterial = itemSpawned.GetComponent<Renderer>();
                 itemMaterial.material = ip.itemMaterial;

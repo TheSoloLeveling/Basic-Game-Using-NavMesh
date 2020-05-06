@@ -19,7 +19,7 @@ MonoBehaviour:
   spawnChanceWeight: 5
   itemMaterial: {fileID: 2100000, guid: 5b0be96218e756142a2e34319dbed986, type: 2}
   itemIcon: {fileID: 21300000, guid: 7a6e3d79f26e1fa45b21760fbb936826, type: 3}
-  itemSpawnObject: {fileID: 54381755956771222, guid: 851d5e8d6952d13469c3c9ff2c723899,
+  itemSpawnObject: {fileID: 54112323206967210, guid: 3329101817c67e24fb70ba97b6168054,
     type: 3}
   weaponSlotObject: {fileID: 54489579891074848, guid: d254034d42cb8fd43964be17e93406f4,
     type: 3}
