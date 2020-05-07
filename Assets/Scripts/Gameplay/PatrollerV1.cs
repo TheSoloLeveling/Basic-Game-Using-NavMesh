@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCController : MonoBehaviour
+public class PatrollerV1 : MonoBehaviour
 {
     public float patrolTime = 15; // wait before seek the next destination
     public float aggroRange = 10; // distance where the NPC increase speed and seek the player
