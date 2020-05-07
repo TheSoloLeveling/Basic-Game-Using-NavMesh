@@ -19,5 +19,22 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("Speed", agent.velocity.magnitude);
     }
-    
+
+   private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Chest")
+        {
+            Debug.Log("Enter");
+            UIManager.Instance.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Chest")
+        {
+            Debug.Log("Exit");
+            UIManager.Instance.gameObject.SetActive(true);
+        }
+    }
 }

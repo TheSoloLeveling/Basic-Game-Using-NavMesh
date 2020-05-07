@@ -17,9 +17,45 @@ public class CharacterInventory : MonoBehaviour
     }
     #endregion
 
+    private void Update()
+    {
+        
+    }
+
     public void StoreItem(ItemPickUp itemToStore)
     {
 
     }
+
+    void TryPickUp()
+    {
+
+    }
+
+    bool AddItemToInv(bool finishedAdding)
+    {
+        return true;
+    }
+
+  //  private void AddItemToHotBar(InventoryEntry itemForHotBar)
+   // {
+
+   // }
+
+    void Displayinventory()
+    {
+
+    }
+
+    void FillInvetoryDisplay()
+    {
+
+    }
+
+    public void TriggerItemUse(int itemToUseID)
+    {
+
+    }
+
 
 }

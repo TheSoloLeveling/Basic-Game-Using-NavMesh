@@ -6,6 +6,7 @@ public class SpawnItem : MonoBehaviour, ISpawns   // link up the interface and w
 {
     public ItemPickUp_SO[] itemDefinitions;
 
+
     private int whichToSpawn = 0;
     private int totalSpawnWeight = 0;
     private int chosen = 0;
@@ -16,6 +17,8 @@ public class SpawnItem : MonoBehaviour, ISpawns   // link up the interface and w
 
     void Start()
     {
+        
+        
         foreach(ItemPickUp_SO ip in itemDefinitions)
         {
             totalSpawnWeight += ip.spawnChanceWeight;
@@ -24,8 +27,9 @@ public class SpawnItem : MonoBehaviour, ISpawns   // link up the interface and w
 
     public void CreateSpawn()
     {
-        foreach (ItemPickUp_SO ip in itemDefinitions)
+        foreach ( ItemPickUp_SO ip in itemDefinitions)
         {
+            
             whichToSpawn += ip.spawnChanceWeight;
             if (whichToSpawn >= chosen)
             {

@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        
         DontDestroyOnLoad(gameObject);
 
         _instancedSystemPrefabs = new List<GameObject>();
@@ -130,6 +131,7 @@ public class GameManager : Singleton<GameManager>
         _loadOperations.Add(ao);
 
         _currentLevelName = levelName;
+        
     }
 
     public void UnloadLevel(string levelName)
